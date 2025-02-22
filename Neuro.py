@@ -11,7 +11,7 @@ class Neuro():
             messages=[{"role": "user", "content": text}],
         )
         if type(response) == dict:
-            return "говнарь вернул словарь"
+            return "вернул словарь"
         return response.choices[0].message.content
 
     # def make_picture(self, prompt):
