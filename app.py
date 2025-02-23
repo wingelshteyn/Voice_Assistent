@@ -77,7 +77,6 @@ def recognize(data, vectorizer, clf):
 
     if 'confirmation' in func_name:
         confirmation_mode = True
-        confirmation_func = func_name
         confirmation_answer = answer.replace(func_name, '')
         voice.speaker('вы уверены?')
         return

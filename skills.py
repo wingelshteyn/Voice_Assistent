@@ -213,3 +213,17 @@ def open_app(filename=None):
 
 def neuro_answer():
     pass
+
+def create_file(file_path="файлики/"):
+    # создание файла по указанному пути
+    if file_path is None:
+        voice.speaker("Произошла ошибка: не указан путь файла")
+        return
+    try:
+        path = Path(file_path)
+        # path.parent.mkdir(parents=True, exist_ok=True)# создаем директории если их нет
+        # path.touch(exist_ok=True)  # создаем файл если он не существует
+        file = open(file_path+'new.txt',"w+")
+        voice.speaker(f"Файл {path.name} успешно создан")
+    except Exception as e:
+        voice.speaker(f"Ошибка при создании файла: {str(e)}")

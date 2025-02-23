@@ -1,5 +1,5 @@
+import openai
 from g4f.client import Client
-
 
 class Neuro():
     def __init__(self):
@@ -14,10 +14,3 @@ class Neuro():
             return "вернул словарь"
         return response.choices[0].message.content
 
-    # def make_picture(self, prompt):
-    #     response = self.client.images.generate(
-    #       model="gemini",
-    #       prompt=prompt,
-    #     )
-    #     image_url = response.data[0].url
-    # короче тут с картинками у меня
