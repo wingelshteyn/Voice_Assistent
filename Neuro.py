@@ -8,7 +8,8 @@ class Neuro():
     def make_answer(self, text):
         response = self.client.chat.completions.create(
             model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": text}],
+            messages=[{"role": "user", "content": text},],
+            stream=True
         )
         if type(response) == dict:
             return "вернул словарь"

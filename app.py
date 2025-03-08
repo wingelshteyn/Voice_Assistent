@@ -78,7 +78,7 @@ def recognize(data, vectorizer, clf):
     if 'confirmation' in func_name:
         confirmation_mode = True
         confirmation_answer = answer.replace(func_name, '')
-        voice.speaker('вы уверены?')
+        voice.speaker('вы уверены')
         return
     parametrs = get_parametrs.get_parametrs(func_name, data)
 
@@ -115,7 +115,7 @@ def main():
         data = name + ' ' + input()
         recognize(data, vectorizer, clf)
 
-    with sd.RawInputStream(samplerate=samplerate, blocksize=16000, device=device[0], dtype='int16',
+    with sd.RawInputStream(samplerate=48000, blocksize=16000, device=device[0], dtype='int16',
                            channels=1, callback=callback):
 
         rec = vosk.KaldiRecognizer(model, samplerate)

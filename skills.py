@@ -10,6 +10,8 @@ from feeches import auto_timer
 from threading import Thread
 import queue
 import test_kurs
+import datetime
+from gtts import gTTS
 from silero_tts.silero_tts import transliterate
 
 from sympy import symbols, simplify
@@ -227,3 +229,14 @@ def create_file(file_path="файлики/"):
         voice.speaker(f"Файл {path.name} успешно создан")
     except Exception as e:
         voice.speaker(f"Ошибка при создании файла: {str(e)}")
+
+
+def speak_time():
+        # Получаем текущее время
+        now = datetime.datetime.now()
+
+        # Форматируем время в удобный для чтения формат
+        current_time = now.strftime("%H часов %M минут")
+
+        # Возвращаем строку с текущим временем
+        return voice.speaker(f"Текущее время: {current_time}")
